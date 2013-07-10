@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Exception Management Data Loader" default="zip" basedir=".">
+<target name="zip">
+<zip destfile="${basedir}/AX.zip"
+   basedir=""
+   includes="config/**,log/**"
+/>
+</target>
+</project>

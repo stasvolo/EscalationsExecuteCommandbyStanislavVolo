@@ -1,0 +1,25 @@
+@ACL1000
+
+^BATCH    New_Script2                        
+[PARENT_FOLDER_ID] 0
+COMMENT
+//ANALYTIC Analytic2
+Analytic number 2
+//FILE AXzip.xml
+//RESULT FILE *.NFO
+//RESULT FILE *.ZIP
+//RESULT LOG
+END
+
+SET SAFETY OFF
+
+com execute 'cmd /c msinfo32 /report "TEST.NFO"'
+com execute 'cmd /c msinfo32 /nfo "CONFLICTS.NFO" /categories +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware'
+
+execute 'cmd /c mkdir "./config"'
+execute 'cmd /c copy %GERONIMO_HOME%\var\config .\config'
+execute 'cmd /c mkdir "./log"'
+execute 'cmd /c copy %GERONIMO_HOME%\var\log .\log'
+
+execute 'cmd /c ant -D"file.encoding=utf8" -f AXzip.xml'
+^OPEN F "allSegments"
