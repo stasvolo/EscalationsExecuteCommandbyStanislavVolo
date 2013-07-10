@@ -22,4 +22,4 @@ execute 'cmd /c mkdir "./log"'
 execute 'cmd /c copy %GERONIMO_HOME%\var\log .\log'
 
 execute 'cmd /c ant -D"file.encoding=utf8" -f AXzip.xml'
-^OPEN F "allSegments"
+
