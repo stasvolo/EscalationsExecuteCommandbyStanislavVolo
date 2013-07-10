@@ -13,8 +13,8 @@ END
 
 SET SAFETY OFF
 
-com execute 'cmd /c msinfo32 /report "TEST.NFO"'
-com execute 'cmd /c msinfo32 /nfo "CONFLICTS.NFO" /categories +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware'
+execute 'cmd /c msinfo32 /report "TEST.NFO"'
+execute 'cmd /c msinfo32 /nfo "CONFLICTS.NFO" /categories +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware'
 
 execute 'cmd /c mkdir "./config"'
 execute 'cmd /c copy %GERONIMO_HOME%\var\config .\config'
